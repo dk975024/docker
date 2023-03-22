@@ -1,0 +1,5 @@
+FROM linux
+RUN yum update all
+RUN yum install httpd -y
+EXPOSE 80
+CMD systemctl start httpd
