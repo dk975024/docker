@@ -11,7 +11,7 @@ resource "aws_security_group" "allow_web" {
   name        = "allow_tls"
   description = "Allow web"
   vpc_id      = aws_vpc.main.id
-
+}
   ingress {
     description      = "web"
     from_port        = 80
