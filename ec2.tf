@@ -7,6 +7,9 @@ resource "aws_instance" "web" {
   key_name = "10march23"
   tenancy                 = "default"
 }
+resource "aws_vpc" "main" {
+  cidr_block = "10.0.0.0/16"
+}
 resource "aws_security_group" "allow_web" {
   name        = "allow_tls"
   description = "Allow web"
