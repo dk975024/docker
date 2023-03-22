@@ -1,8 +1,8 @@
-FROM alpine:3.5
-RUN apk add --update py?-pip
-copy requirement.txt /usr/src/app/
-RUN pip install -no-cache-dir -r /usr/src/app/requirements.txt
-COPY app.py /usr/src/app/
-copy template/index.html /usr/src/app/templates/
-EXPOSE 5000
-CMD ["python," "/usr/src/app/app.py"]
+FROM centos
+RUN mkdir /opt/tomcat/
+WORKDIR /opt/tomcat
+RUN curl -O https://www-eu.apache.org/dist/tomcat/tomcat-8/v8.5.40/bin/apache-tomcat-8.5.40.tar.gz
+RUN tar xvfz apache*.tar.gz
+RUN mv apache-tomcat-8.5.40/* /opt/tomcat/.
+RUN yum -y install java
+EXPOSE 8080
