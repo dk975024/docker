@@ -1,3 +1,3 @@
 FROM httpd:2.4
 COPY ./index.html/ /var/www/html/
-expos 80
+EXPOSE 80
