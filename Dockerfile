@@ -1,6 +1,3 @@
-FROM centos:7
-RUN yum update -y
-RUN yum install httpd -y
-COPY ./index.html/ /var/www/html/
-RUN systemctl start httpd.service
+FROM nginix:latest
+COPY index.html/ /usr/local/apache2/htdocs/
 EXPOSE 80
